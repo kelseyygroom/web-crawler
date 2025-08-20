@@ -6,8 +6,6 @@ This project is an implementation of a web crawler. The web crawler crawls all i
 
 ## Crawler Flow
 
-The crawler receives a cache host and port from the spacetime servers and instantiates the config.
+The crawler receives a cache host and port from the spacetime servers and instantiates the config. It launches a crawler which creates a Frontier and Worker.
 
-It launches a crawler which creates a Frontier and Worker(s).
-
-When the crawler in started, workers are created that pick up an undownloaded link from the frontier, download it from the cache server, and pass the response to the scraper function. The links that are received by the scraper is added to the list of undownloaded links in the frontier and the url that was downloaded is marked as complete. The cycle continues until there are no more urls to be downloaded in the frontier.
+When the crawler is started, workers are created that pick up an undownloaded link from the frontier, download it from the cache server, and pass the response to the scraper function. The links that are received by the scraper is added to the list of undownloaded links in the frontier and the url that was downloaded is marked as complete. The cycle continues until there are no more urls to be downloaded in the frontier.
